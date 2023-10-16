@@ -22,7 +22,7 @@ import { BlockedUserGetController } from "./controller/blocked.user.get.controll
     AdminPostController,
     UserController,
     BlockedUserDeleteController,
-    BlockedUserGetController
+    BlockedUserGetController,
   ],
 })
 export class AppModule {}
