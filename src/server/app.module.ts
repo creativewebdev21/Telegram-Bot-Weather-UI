@@ -8,6 +8,7 @@ import { AdminGetController } from "./controller/admin.get.controller"
 import { AdminPostController } from "./controller/admin.post.controller"
 import { UserController } from "./controller/user.controller"
 import { BlockedUserDeleteController } from "./controller/blocked.user.delete.ontroller"
+import { BlockedUserGetController } from "./controller/blocked.user.get.controller"
 
 @Module({
   /* should pass a NEXT.js server instance
@@ -21,6 +22,7 @@ import { BlockedUserDeleteController } from "./controller/blocked.user.delete.on
     AdminPostController,
     UserController,
     BlockedUserDeleteController,
+    BlockedUserGetController
   ],
 })
 export class AppModule {}

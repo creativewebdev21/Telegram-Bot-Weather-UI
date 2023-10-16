@@ -19,6 +19,7 @@ const admin_get_controller_1 = require("./controller/admin.get.controller");
 const admin_post_controller_1 = require("./controller/admin.post.controller");
 const user_controller_1 = require("./controller/user.controller");
 const blocked_user_delete_ontroller_1 = require("./controller/blocked.user.delete.ontroller");
+const blocked_user_get_controller_1 = require("./controller/blocked.user.get.controller");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,7 +33,8 @@ exports.AppModule = AppModule = __decorate([
             admin_get_controller_1.AdminGetController,
             admin_post_controller_1.AdminPostController,
             user_controller_1.UserController,
-            blocked_user_delete_ontroller_1.BlockedUserDeleteController
+            blocked_user_delete_ontroller_1.BlockedUserDeleteController,
+            blocked_user_get_controller_1.BlockedUserGetController
         ],
     })
 ], AppModule);

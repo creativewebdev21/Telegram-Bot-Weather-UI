@@ -8,39 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlockedUserDeleteController = void 0;
-const blocked_user_model_1 = __importDefault(require("../model/blocked.user.model"));
+exports.BlockedUserGetController = void 0;
 const common_1 = require("@nestjs/common");
-let BlockedUserDeleteController = class BlockedUserDeleteController {
+const blocked_user_model_1 = __importDefault(require("../model/blocked.user.model"));
+let BlockedUserGetController = class BlockedUserGetController {
     constructor() { }
-    async blockedUserDelete(body) {
-        const { userid } = body;
+    async blockedUserGet() {
         try {
-            await blocked_user_model_1.default.findOneAndDelete({ userid }).lean();
-            return { message: "deleted" };
+            const blockedUsers = await blocked_user_model_1.default.find({}).lean();
+            return blockedUsers;
         }
         catch (err) {
             throw new Error(err);
         }
     }
 };
-exports.BlockedUserDeleteController = BlockedUserDeleteController;
+exports.BlockedUserGetController = BlockedUserGetController;
 __decorate([
-    (0, common_1.Delete)("/api/admin/blocked"),
-    __param(0, (0, common_1.Body)()),
+    (0, common_1.Get)("/api/admin/blocked"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], BlockedUserDeleteController.prototype, "blockedUserDelete", null);
-exports.BlockedUserDeleteController = BlockedUserDeleteController = __decorate([
+], BlockedUserGetController.prototype, "blockedUserGet", null);
+exports.BlockedUserGetController = BlockedUserGetController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [])
-], BlockedUserDeleteController);
-//# sourceMappingURL=blocked.user.delete.ontroller.js.map
+], BlockedUserGetController);
+//# sourceMappingURL=blocked.user.get.controller.js.map
