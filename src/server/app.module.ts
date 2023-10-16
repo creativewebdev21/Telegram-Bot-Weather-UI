@@ -5,6 +5,7 @@ import Next from "next"
 import { NODE_ENV } from "shared/constants/env"
 import { AppController } from "./app.controller"
 import { AdminGetController } from "./controller/admin.get.controller"
+import { AdminPostController } from "./controller/admin.post.controller"
 
 @Module({
   /* should pass a NEXT.js server instance
@@ -12,6 +13,6 @@ import { AdminGetController } from "./controller/admin.get.controller"
   imports: [
     RenderModule.forRootAsync(Next({ dev: NODE_ENV === "development" }), { viewsDir: null }),
   ],
-  controllers: [AppController, AdminGetController],
+  controllers: [AppController, AdminGetController, AdminPostController],
 })
 export class AppModule {}
