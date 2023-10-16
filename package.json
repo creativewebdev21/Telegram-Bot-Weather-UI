@@ -14,7 +14,7 @@
     "build:nest": "nest build --path ./tsconfig.server.json",
     "start": "node ./dist/server/main.js",
     "start:next": "next dev",
-    "start:dev": "SET NODE_ENV=development && nest start --path ./tsconfig.server.json --watch",
+    "dev": "SET NODE_ENV=development && nest start --path ./tsconfig.server.json --watch",
     "start:debug": "nest start --path ./tsconfig.server.json --debug --watch",
     "start:prod": "node dist/main",
     "prettier:fix": "npx prettier --write ./src",
