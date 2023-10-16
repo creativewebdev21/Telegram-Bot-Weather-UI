@@ -8,4 +8,4 @@
         "./src/shared/**/*.ts",
         "./@types/**/*.d.ts"
     ]
-}
+  }

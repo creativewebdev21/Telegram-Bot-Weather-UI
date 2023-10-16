@@ -1,7 +1,3 @@
-const HomePage = () => {
-    return (
-        <>This is Home Page</>
-    )
-}
+const HomePage = () => <>This is Home Page</>
 
 export default HomePage
