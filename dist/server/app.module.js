@@ -17,6 +17,7 @@ const env_1 = require("../shared/constants/env");
 const app_controller_1 = require("./app.controller");
 const admin_get_controller_1 = require("./controller/admin.get.controller");
 const admin_post_controller_1 = require("./controller/admin.post.controller");
+const user_controller_1 = require("./controller/user.controller");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -25,7 +26,7 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             nest_next_1.RenderModule.forRootAsync((0, next_1.default)({ dev: env_1.NODE_ENV === "development" }), { viewsDir: null }),
         ],
-        controllers: [app_controller_1.AppController, admin_get_controller_1.AdminGetController, admin_post_controller_1.AdminPostController],
+        controllers: [app_controller_1.AppController, admin_get_controller_1.AdminGetController, admin_post_controller_1.AdminPostController, user_controller_1.UserController],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
