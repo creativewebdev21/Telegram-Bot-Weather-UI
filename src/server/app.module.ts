@@ -7,6 +7,7 @@ import { AppController } from "./app.controller"
 import { AdminGetController } from "./controller/admin.get.controller"
 import { AdminPostController } from "./controller/admin.post.controller"
 import { UserController } from "./controller/user.controller"
+import { BlockedUserDeleteController } from "./controller/blocked.user.delete.ontroller"
 
 @Module({
   /* should pass a NEXT.js server instance
@@ -14,6 +15,12 @@ import { UserController } from "./controller/user.controller"
   imports: [
     RenderModule.forRootAsync(Next({ dev: NODE_ENV === "development" }), { viewsDir: null }),
   ],
-  controllers: [AppController, AdminGetController, AdminPostController, UserController],
+  controllers: [
+    AppController,
+    AdminGetController,
+    AdminPostController,
+    UserController,
+    BlockedUserDeleteController,
+  ],
 })
 export class AppModule {}
