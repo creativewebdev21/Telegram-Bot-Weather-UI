@@ -28,9 +28,9 @@ const Header = () => {
       >
         <div
           className="flex items-center 
-      xl:gap-x-[60px]
-      lg:gap-x-[54px]
-      md:gap-x-[36px]"
+          xl:gap-x-[60px]
+          lg:gap-x-[54px]
+          md:gap-x-[36px]"
         >
           <Link href="/">
             <div className="flex items-center gap-x-[10px] cursor-pointer">
@@ -50,6 +50,9 @@ const Header = () => {
             </div>
           </Link>
         </div>
+        <button type="button" onClick={() => window.open("https://t.me/WeatherHenryBot", "_blank")}>
+          <p className="text-[18px] text-white">Bot Handle</p>
+        </button>
         <div className="flex gap-x-[30px] items-center">
           <GoogleLoginButton />
           <div className="flex justify-center gap-x-[20px]">
