@@ -1,0 +1,17 @@
+/* Pulse Effect */
+.pulse__effect {
+  animation: pulse-effect 1s ease-out;
+}
+
+@keyframes pulse-effect {
+  0% {
+    opacity: 0.2;
+    height: 0px;
+    width: 0px;
+  }
+  100% {
+    opacity: 0;
+    height: 400px;
+    width: 400px;
+  }
+}
