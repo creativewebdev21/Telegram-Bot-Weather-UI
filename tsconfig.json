@@ -37,7 +37,7 @@
     "./pages/**/*",
     "./src/**/*",
     "./ui/**/*",
-    "types.ts"
+    "globals.d.ts"
   ],
   "exclude": [
     "node_modules"
