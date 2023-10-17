@@ -4,10 +4,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./layouts/**/*.{js,ts,jsx,tsx}",
     "./shared/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -16,7 +14,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-       
+        poppins: ["Poppins", "sans-serif"],
+        poppins_light: ["Poppins Light", "sans-serif"],
+        poppins_medium: ["Poppins Medium", "sans-serif"],
+        poppins_semibold: ["Poppins SemiBold", "sans-serif"],
+        poppins_bold: ["Poppins Bold", "sans-serif"],
       },
       screens: {
         ios : '320px',
