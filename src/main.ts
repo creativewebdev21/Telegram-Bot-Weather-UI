@@ -4,7 +4,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import mongoose from "mongoose"
 import { MONGO_URI } from "../utils/constants/env"
 import { join } from 'path';
-import WeatherBot from './WeatherBot';
+import WeatherBot from './bot/WeatherBot';
 
 async function bootstrap() {
   const opts = {
