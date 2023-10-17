@@ -1,0 +1,68 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D tailwindcss postcss autoprefixer
+
+PATH: 
+  C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Administrator\AppData\Local\Programs\Python\Python39;C:\Program Files\Go\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Maven\bin;C:\Program Files\PuTTY\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools\bin;D:\flutter\bin;D:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Ruby31-x64\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python39;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk-17.0.1\bin;C:\Maven\bin;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Edument Central Europe\Comma Community Edition 2023.04.0\bin;;C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools;D:\flutter\bin;D:\xampp\php;C:\Users\Administrator\AppData\Roaming\Composer\vendor\bin;C:\ProgramData\ComposerSetup\bin;C:\Users\Administrator\AppData\Local\Android\Sdk\tools\bin;C:\Users\Administrator\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ECONNREFUSED 104.16.30.34:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
+
+npm manifest: 
+  {
+    "name": "nestnext8",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "dev": "nodemon src/main.ts",
+      "build:clean": "rimraf .next",
+      "build:ui": "npx next build",
+      "build:server": "npx tsc --project tsconfig.server.json && npx babel .next/production-server -d .next/production-server --extensions \".js\"",
+      "build": "yarn build:clean && yarn build:ui && yarn build:server",
+      "start": "cross-env NODE_ENV=production node .next/production-server/src/main.js"
+    },
+    "dependencies": {
+      "@nestjs/common": "^8.4.4",
+      "@nestjs/core": "^8.4.4",
+      "@nestjs/platform-express": "^8.4.4",
+      "cross-env": "^7.0.3",
+      "nest-next": "^9.6.0",
+      "next": "12.1.5",
+      "react": "18.0.0",
+      "react-dom": "18.0.0",
+      "reflect-metadata": "^0.1.13",
+      "rxjs": "^7.5.5"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.17.6",
+      "@babel/core": "^7.17.9",
+      "@types/node": "^17.0.23",
+      "@types/react": "^18.0.4",
+      "@typescript-eslint/eslint-plugin": "^5.19.0",
+      "@typescript-eslint/parser": "^5.19.0",
+      "eslint": "^8.13.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "nodemon": "^2.0.15",
+      "prettier": "^2.6.2",
+      "rimraf": "^3.0.0",
+      "ts-node": "^10.7.0",
+      "typescript": "^4.6.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
