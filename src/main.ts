@@ -1,10 +1,10 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './ApplicationModule';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import { NestFactory } from "@nestjs/core"
+import { AppModule } from "./ApplicationModule"
+import { NestExpressApplication } from "@nestjs/platform-express"
 import mongoose from "mongoose"
 import { MONGO_URI } from "../utils/constants/env"
-import { join } from 'path';
-import WeatherBot from './bot/WeatherBot';
+import { join } from "path"
+import WeatherBot from "./bot/WeatherBot"
 
 async function bootstrap() {
   const opts = {
@@ -24,14 +24,14 @@ async function bootstrap() {
 
   WeatherBot.launch()
   WeatherBot.catch((error) => {
-    console.log('Bot Error:', error);
-  });
+    console.log("Bot Error:", error)
+  })
 
-  const server = await NestFactory.create<NestExpressApplication>(AppModule);
+  const server = await NestFactory.create<NestExpressApplication>(AppModule)
 
-  server.useStaticAssets(join(__dirname, '..', 'public'))
+  server.useStaticAssets(join(__dirname, "..", "public"))
 
-  await server.listen(3000);
+  await server.listen(3000)
 }
 
-bootstrap();
+bootstrap()
