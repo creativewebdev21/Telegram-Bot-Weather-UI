@@ -11,16 +11,11 @@ import BlockedUserController from "./controller/BlockedUserController"
   imports: [
     RenderModule.forRootAsync(
       Next({
-        dev: NODE_ENV !== 'production',
+        dev: NODE_ENV !== "production",
         conf: { useFilesystemPublicRoutes: false },
       }),
     ),
   ],
-  controllers: [
-    AppController,
-    AdminController,
-    UserController,
-    BlockedUserController
-  ],
+  controllers: [AppController, AdminController, UserController, BlockedUserController],
 })
 export class AppModule {}

@@ -2,7 +2,7 @@ import { Schema, model, models, Model, Document } from "mongoose"
 
 interface AdminModel extends Document {
   email: string
-  email_verified: Boolean,
+  email_verified: Boolean
   family_name: string
   given_name: string
   locale: string
@@ -23,20 +23,20 @@ const AdminSchema = new Schema<AdminModel>({
     type: String,
   },
   given_name: {
-    type: String
+    type: String,
   },
   locale: {
-    type: String
+    type: String,
   },
   name: {
-    type: String
+    type: String,
   },
   picture: {
-    type: String
+    type: String,
   },
   sub: {
-    type: Number
-  }
+    type: Number,
+  },
 })
 
 export default (models.Admin as Model<AdminModel>) || model("Admin", AdminSchema)

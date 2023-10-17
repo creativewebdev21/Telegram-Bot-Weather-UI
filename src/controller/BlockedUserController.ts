@@ -40,7 +40,6 @@ class BlockedUserController {
     }
   }
 
-  
   @Get("/api/admin/blocked")
   public async blockedUserGet() {
     try {
