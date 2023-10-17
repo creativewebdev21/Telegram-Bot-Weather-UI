@@ -4,6 +4,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import mongoose from "mongoose"
 import { MONGO_URI } from "../utils/constants/env"
 import { join } from 'path';
+import WeatherBot from './WeatherBot';
 
 async function bootstrap() {
   const opts = {
@@ -20,6 +21,11 @@ async function bootstrap() {
     .catch((error) => {
       console.log("Error connecting to Database : ", error.message)
     })
+
+  WeatherBot.launch()
+  WeatherBot.catch((error) => {
+    console.log('Bot Error:', error);
+  });
 
   const server = await NestFactory.create<NestExpressApplication>(AppModule);
 
