@@ -1,3 +1,3 @@
-import SeoHead from './SeoHead'
+import SeoHead from "./SeoHead"
 
 export default SeoHead
