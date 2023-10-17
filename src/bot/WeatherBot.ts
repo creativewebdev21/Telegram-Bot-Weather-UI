@@ -3,6 +3,7 @@ import start from "./start"
 import help from "./help"
 import weather from "./weather"
 import subscribe from "./subscribe"
+import unsubscribe from "./unsubscribe"
 
 // Load environment variables
 const BOT_TOKEN = process.env.BOT_TOKEN || ""
@@ -18,6 +19,9 @@ help(WeatherBot)
 
 // Handling "/subscribe" command
 subscribe(WeatherBot)
+
+// Handling "/unsubscribe" command
+unsubscribe(WeatherBot)
 
 // Handling "/weather" command
 weather(WeatherBot)
