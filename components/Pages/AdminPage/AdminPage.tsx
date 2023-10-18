@@ -33,12 +33,7 @@ const AdminPage = () => {
             <tbody>
               {telegramUsers.length ? (
                 telegramUsers.map((user: TelegramUser) => (
-                  <TableRow
-                    key={user.userid}
-                    userid={user.userid}
-                    username={user.username}
-                    time={user.time}
-                  />
+                  <TableRow key={user.userid} user={user} />
                 ))
               ) : (
                 <tr className="text-black text-center">
