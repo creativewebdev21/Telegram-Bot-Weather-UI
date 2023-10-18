@@ -32,9 +32,10 @@ Build the production:
 yarn build
 ```
 
-Formatting code style & syntax
+Format code style & syntax
 
 ```bash
 yarn format
 ```
 
+🛳️ Built by Henry Ziad 🛳️
