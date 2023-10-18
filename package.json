@@ -16,11 +16,13 @@
     "lint": "next lint --max-warnings 0"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@nestjs/common": "^8.4.4",
     "@nestjs/core": "^8.4.4",
     "@nestjs/platform-express": "^8.4.4",
     "@react-oauth/google": "^0.11.1",
     "@tailwindcss/forms": "^0.5.6",
+    "@types/react-table": "^7.7.16",
     "aos": "^2.3.4",
     "axios": "^1.5.1",
     "class-validator": "^0.14.0",
@@ -32,6 +34,7 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.11.0",
+    "react-table": "^7.8.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5",
     "sweetalert": "^2.1.2",
