@@ -6,19 +6,22 @@ const AdminContext = createContext<any>(null)
 export const AdminProvider = ({ children }: any) => {
   const [telegramUsers, setTelegramUsers] = useState<any>(null)
   const [filterKey, setFilterKey] = useState("")
+  const [filterUsers, setFilterUsers] = useState<any>(null)
 
   const fetchTelegramUsers = useCallback(async () => {
     try {
       const response = await getTelegramUsers()
-      setFilterKey("")
       setTelegramUsers(response)
+      setFilterUsers(response)
     } catch (err) {}
   }, [])
 
   useEffect(() => {
     if (telegramUsers) {
-      const filterTemp = telegramUsers?.filter((user: any) => user.username.toLowerCase().search(filterKey.toLowerCase()) >= 0)
-      setTelegramUsers(filterTemp)
+      const filterTemp = telegramUsers?.filter(
+        (user: any) => user.username.toLowerCase().search(filterKey.toLowerCase()) >= 0,
+      )
+      setFilterUsers(filterTemp)
     }
   }, [filterKey])
 
@@ -28,12 +31,12 @@ export const AdminProvider = ({ children }: any) => {
 
   const provider = useMemo(
     () => ({
-      telegramUsers,
+      filterUsers,
       fetchTelegramUsers,
       filterKey,
-      setFilterKey
+      setFilterKey,
     }),
-    [telegramUsers, fetchTelegramUsers, filterKey, setFilterKey],
+    [fetchTelegramUsers, filterKey, setFilterKey, filterUsers],
   )
 
   return <AdminContext.Provider value={provider}>{children}</AdminContext.Provider>

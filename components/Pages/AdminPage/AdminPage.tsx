@@ -4,9 +4,10 @@ import SkeletonTableBody from "./SkeletonTableBody"
 import TableRow from "./TableRow"
 import TableHead from "./TableHead"
 import { TelegramUser } from "./types"
+import SearchInput from "./SearchInput"
 
 const AdminPage = () => {
-  const { telegramUsers } = useAdminProvider()
+  const { filterUsers } = useAdminProvider()
 
   return (
     <Layout type="base">
@@ -18,6 +19,9 @@ const AdminPage = () => {
                   flex items-center justify-center
                   flex-col"
       >
+        <div className="w-[80%] flex justify-end pb-[10px]">
+          <SearchInput />
+        </div>
         <table
           className="w-[80%] font-poppins bg-white
         border-black border-[2px]"
@@ -30,12 +34,10 @@ const AdminPage = () => {
               <TableHead>Action</TableHead>
             </tr>
           </thead>
-          {telegramUsers ? (
+          {filterUsers ? (
             <tbody>
-              {telegramUsers.length ? (
-                telegramUsers.map((user: TelegramUser) => (
-                  <TableRow key={user.userid} user={user} />
-                ))
+              {filterUsers.length ? (
+                filterUsers.map((user: TelegramUser) => <TableRow key={user.userid} user={user} />)
               ) : (
                 <tr className="text-black text-center">
                   <td colSpan={4} className="p-4">
