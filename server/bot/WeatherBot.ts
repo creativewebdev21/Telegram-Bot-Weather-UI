@@ -6,8 +6,12 @@ import subscribe from "./subscribe"
 import unsubscribe from "./unsubscribe"
 import rejoin from "./rejoin"
 
+let WeatherBot: any
+
 const launch = (botKey: string) => {
-  const WeatherBot = new Telegraf(botKey)
+  console.log(botKey)
+  
+  WeatherBot = new Telegraf(botKey)
 
   start(WeatherBot)
 
@@ -24,17 +28,18 @@ const launch = (botKey: string) => {
   WeatherBot.launch().then(() => {
     console.log(`Bot-${botKey} is running`)
   })
-  WeatherBot.catch((error) => {
+  WeatherBot.catch((error: any) => {
     console.log("Bot Error:", error)
   })
 }
 
 export const stop = (botKey: string) => {
-  const WeatherBot = new Telegraf(botKey)
-
-  WeatherBot.stop("Stopped by admin")
-
-  console.log(`Bot-${botKey} is stopped`)
+  try {
+    WeatherBot.stop("Stopped by admin")
+    console.log(`Bot-${botKey} is stopped`)
+  } catch (err) {
+    console.log(`Bot-${botKey} is not running`)
+  }
 }
 
 export default launch
