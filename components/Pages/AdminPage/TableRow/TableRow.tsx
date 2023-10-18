@@ -34,31 +34,23 @@ const TableRow = ({ user }: { user: TelegramUser }) => {
     <tr
       key={user.userid}
       className="text-center bg-white hover:bg-blue-300
-      border-b-[2px] border-black"
+      border-b-[2px] border-black 
+      text-[8px] xs:text-[11px]
+      md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]"
     >
+      <td className="border-r-2 border-black px-[5px]">{user.userid}</td>
+      <td className="border-r-2 border-black px-[5px]">{user.username}</td>
+      <td className="border-r-2 border-black px-[5px]">{user.time}</td>
       <td
-        className="text-[8px] xs:text-[11px] md:text-[16px]
-            border-r-2 border-black"
+        className="flex gap-x-[10px] gap-y-[5px] justify-center
+      py-[5px] md:py-3 px-[5px]
+      flex-col items-center md:flex-row"
       >
-        {user.userid}
-      </td>
-      <td
-        className="text-[8px] xs:text-[11px] md:text-[16px]
-           border-r-2 border-black"
-      >
-        {user.username}
-      </td>
-      <td
-        className="text-[8px] xs:text-[11px] md:text-[16px]
-         border-r-2 border-black"
-      >
-        {user.time}
-      </td>
-      <td className="flex gap-x-[10px] justify-center py-3">
         <Button
           id={`${user.userid}_block_btn`}
           className={`border-[1px] 
-          w-[100px] h-[40px]
+          md:w-[100px] md:h-[40px]
+          w-[50px] h-[20px]
           rounded-full ${
             user.blocked ? "border-[green] !text-[green]" : "border-[red] !text-[red]"
           }`}
@@ -70,7 +62,8 @@ const TableRow = ({ user }: { user: TelegramUser }) => {
         <Button
           id={`${user.userid}_block_btn`}
           className="border border-[red] !text-[red]
-            w-[100px] h-[40px]
+            md:w-[100px] md:h-[40px]
+            w-[50px] h-[20px]
             rounded-full"
           pulseColor="red"
           onClick={deleteUserData}

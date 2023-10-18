@@ -10,7 +10,9 @@ const SearchInput = () => {
       className="rounded-full
         placeholder:text-[gray]
         font-poppins
-        w-[250px] h-[45px]"
+        text-[10px] md:text-[16px]
+        md:w-[250px] md:h-[45px]
+        w-[180px] h-[30px]"
       placeholder="Search By Telegram ID"
     />
   )
