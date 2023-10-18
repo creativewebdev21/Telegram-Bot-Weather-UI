@@ -61,7 +61,7 @@ const DesktopMenu = () => {
       </button>
       <div className="flex gap-x-[30px] items-center">
         <GoogleLoginButton />
-        <div className="flex justify-center gap-x-[20px]">
+        <div className="flex justify-center gap-x-[20px] items-center">
           <p
             className="font-poppins_medium
             md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]
