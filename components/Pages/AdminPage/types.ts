@@ -1,5 +1,7 @@
 export type TelegramUser = {
-  userid: string
+  userid: number
   username: string
   time: string
+  blocked: boolean
+  subscribed: boolean
 }
