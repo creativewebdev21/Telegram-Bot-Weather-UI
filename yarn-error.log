@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/react-table
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D joi
 
 PATH: 
   C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Administrator\AppData\Local\Programs\Python\Python39;C:\Program Files\Go\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Java\jdk-17.0.1\bin;C:\Maven\bin;C:\Program Files\PuTTY\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools\bin;D:\flutter\bin;D:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Ruby31-x64\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python39;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk-17.0.1\bin;C:\Maven\bin;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Edument Central Europe\Comma Community Edition 2023.04.0\bin;;C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools;C:\Users\Administrator\AppData\Local\Android\Sdk\tools;D:\flutter\bin;D:\xampp\php;C:\Users\Administrator\AppData\Roaming\Composer\vendor\bin;C:\ProgramData\ComposerSetup\bin;C:\Users\Administrator\AppData\Local\Android\Sdk\tools\bin;C:\Users\Administrator\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ECONNREFUSED 104.16.28.34:443
+  Error: connect ECONNREFUSED 104.16.27.34:443
       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
 
 npm manifest: 
@@ -37,11 +37,13 @@ npm manifest:
     },
     "dependencies": {
       "@heroicons/react": "^2.0.18",
+      "@hookform/resolvers": "^3.3.2",
       "@nestjs/common": "^8.4.4",
       "@nestjs/core": "^8.4.4",
       "@nestjs/platform-express": "^8.4.4",
       "@react-oauth/google": "^0.11.1",
       "@tailwindcss/forms": "^0.5.6",
+      "@types/react-table": "^7.7.16",
       "aos": "^2.3.4",
       "axios": "^1.5.1",
       "class-validator": "^0.14.0",
@@ -52,6 +54,7 @@ npm manifest:
       "next": "12.1.5",
       "react": "18.0.0",
       "react-dom": "18.0.0",
+      "react-hook-form": "^7.47.0",
       "react-icons": "^4.11.0",
       "react-table": "^7.8.0",
       "reflect-metadata": "^0.1.13",
@@ -356,6 +359,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.18.tgz#f80301907c243df03c7e9fd76c0286e95361f7c1"
     integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
   
+  "@hookform/resolvers@^3.3.2":
+    version "3.3.2"
+    resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-3.3.2.tgz#5c40f06fe8137390b071d961c66d27ee8f76f3bc"
+    integrity sha512-Tw+GGPnBp+5DOsSg4ek3LCPgkBOuOgS5DsDV7qsWNH9LZc433kgsWICjlsh2J9p04H2K66hsXPPb9qn9ILdUtA==
+  
   "@humanwhocodes/config-array@^0.11.11":
     version "0.11.11"
     resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.11.tgz#88a04c570dbbc7dd943e4712429c3df09bc32844"
@@ -636,6 +644,22 @@ Lockfile:
     version "15.7.8"
     resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.8.tgz#805eae6e8f41bd19e88917d2ea200dc992f405d3"
     integrity sha512-kMpQpfZKSCBqltAJwskgePRaYRFukDkm1oItcAbC3gNELR20XIBcN9VRgg4+m8DKsTfkWeA4m4Imp4DDuWy7FQ==
+  
+  "@types/react-table@^7.7.16":
+    version "7.7.16"
+    resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.7.16.tgz#e143e2c0fa2dcac739fcc8055e58f5a7a9c0e5fb"
+    integrity sha512-khfVwkNkvFnQV+Dx5Z/4jeMWIi+qytR8/Hl89fMPQ3aGiIgVlnghwdnyrq45UVSU+9wTqQFL0kUmIk4MGaM20Q==
+    dependencies:
+      "@types/react" "*"
+  
+  "@types/react@*":
+    version "18.2.29"
+    resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.29.tgz#88b48a287e00f6fdcd6f95662878fb701ae18b27"
+    integrity sha512-Z+ZrIRocWtdD70j45izShRwDuiB4JZqDegqMFW/I8aG5DxxLKOzVNoq62UIO82v9bdgi+DO1jvsb9sTEZUSm+Q==
+    dependencies:
+      "@types/prop-types" "*"
+      "@types/scheduler" "*"
+      csstype "^3.0.2"
   
   "@types/react@^18.0.4":
     version "18.2.28"
@@ -3275,6 +3299,11 @@ Lockfile:
     dependencies:
       loose-envify "^1.1.0"
       scheduler "^0.21.0"
+  
+  react-hook-form@^7.47.0:
+    version "7.47.0"
+    resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.47.0.tgz#a42f07266bd297ddf1f914f08f4b5f9783262f31"
+    integrity sha512-F/TroLjTICipmHeFlMrLtNLceO2xr1jU3CyiNla5zdwsGUGu2UOxxR4UyJgLlhMwLW/Wzp4cpJ7CPfgJIeKdSg==
   
   react-icons@^4.11.0:
     version "4.11.0"
