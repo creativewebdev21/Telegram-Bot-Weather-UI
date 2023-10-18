@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/main.ts",
+    "dev": "nodemon server/main.ts",
     "build:clean": "rimraf .next",
     "build:ui": "npx next build",
     "build:server": "npx tsc --project tsconfig.server.json && npx babel .next/production-server -d .next/production-server --extensions \".js\"",
     "build": "yarn build:clean && yarn build:ui && yarn build:server",
-    "start": "cross-env NODE_ENV=production node .next/production-server/src/main.js",
-    "prettier:fix": "npx prettier --write components pages providers src",
+    "start": "cross-env NODE_ENV=production node .next/production-server/server/main.js",
+    "prettier:fix": "npx prettier --write components pages providers server",
     "format": "yarn run prettier:fix && yarn run lint:fix",
     "lint:fix": "next lint --fix",
     "lint": "next lint --max-warnings 0"
