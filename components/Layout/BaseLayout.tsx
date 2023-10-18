@@ -1,6 +1,7 @@
 import React from "react"
 import { ILayout } from "./types"
 import SeoHead from "../SeoHead"
+import Header from "../Header"
 
 function BaseLayout({ children }: ILayout) {
   return (
@@ -11,6 +12,7 @@ function BaseLayout({ children }: ILayout) {
       bg-white
       overflow-x-hidden"
     >
+      <Header />
       <SeoHead
         title="Weather Telegram Bot"
         description="This is Telegram Bot Test Assignment"
