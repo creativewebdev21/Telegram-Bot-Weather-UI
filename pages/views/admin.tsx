@@ -1,5 +1,10 @@
 import AdminPage from "../../components/Pages/AdminPage"
+import { AdminProvider } from "../../providers/AdminProvider"
 
-const Admin = () => <AdminPage />
+const Admin = () => (
+  <AdminProvider>
+    <AdminPage />
+  </AdminProvider>
+)
 
 export default Admin
