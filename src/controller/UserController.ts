@@ -46,7 +46,7 @@ class UserController {
   @Delete("/api/user/deleted")
   public async deleteUser(@Query("userid") userid: number) {
     try {
-      await User.findOneAndRemove({userid}).lean()
+      await User.findOneAndRemove({ userid }).lean()
 
       return { message: "deleted" }
     } catch (err: any) {

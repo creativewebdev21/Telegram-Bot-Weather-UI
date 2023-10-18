@@ -8,6 +8,7 @@ const subscribe = (bot: any) => {
 
     if (!user) {
       ctx.reply("You have not registered!!!")
+      return
     }
 
     if (user?.subscribed) {
