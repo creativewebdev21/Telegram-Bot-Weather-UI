@@ -13,6 +13,7 @@ const AdminPage = () => {
       <div
         className="w-screen h-screen
                   bg-[url('/images/Home/d_weather_bg.jpg')]
+                  dark:bg-[url('/images/Home/d_weather_dark_bg.jpg')]
                   bg-cover
                   flex items-center justify-center
                   flex-col"

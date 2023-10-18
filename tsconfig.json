@@ -36,7 +36,7 @@
   },
   "include": [
     "./pages/**/*",
-    "./src/**/*",
+    "./server/**/*",
     "./ui/**/*",
     "globals.d.ts"
   ],
