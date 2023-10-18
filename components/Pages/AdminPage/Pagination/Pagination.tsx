@@ -25,18 +25,21 @@ const Pagination = () => {
       className="text-white font-poppins
     flex flex-col items-end gap-y-[5px]"
     >
-      <p>Page {pageIndex + 1}</p>
+      <p className="text-[10px] md:text-[16px]">Page {pageIndex + 1}</p>
       <div
         className="text-white
       flex items-center gap-x-[10px]"
       >
-        <p>Items Per Page</p>
+        <p className="text-[10px] md:text-[16px]">Items Per Page</p>
         <select
-          className="border-gray-300 rounded-md shadow-sm 
+          className="border-gray-300 
+          rounded-md shadow-sm 
           focus:border-indigo-300 
           focus:ring focus:ring-indigo-200 
           focus:ring-opacity-50
-          text-black"
+          text-black
+          text-[10px] md:text-[16px]
+          py-[2px] md:py-[5px] px-auto"
           value={pageSize}
           onChange={(e) => {
             setPageSize(Number(e.target.value))

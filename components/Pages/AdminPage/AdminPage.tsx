@@ -13,7 +13,8 @@ const AdminPage = () => {
   return (
     <Layout type="base">
       <div
-        className="w-screen h-screen
+        className="w-screen min-h-screen
+                  pt-[100px]
                   bg-[url('/images/Home/d_weather_bg.jpg')]
                   dark:bg-[url('/images/Home/d_weather_dark_bg.jpg')]
                   bg-cover
