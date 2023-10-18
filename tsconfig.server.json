@@ -12,6 +12,6 @@
     "noEmit": false,
     "allowJs": false
   },
-  "include": ["./src/**/*"],
+  "include": ["./server/**/*"],
   "exclude": ["node_modules"]
 }
