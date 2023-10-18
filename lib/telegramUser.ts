@@ -11,26 +11,25 @@ export const blockUser = async (userid: number) => {
 }
 
 export const unblockUser = async (userid: number) => {
-    try {
-      await axios.post("/api/user/unblocked", { userid })
-  
-      return true
-    } catch (err) {
-      return { err }
-    }
+  try {
+    await axios.post("/api/user/unblocked", { userid })
+
+    return true
+  } catch (err) {
+    return { err }
+  }
 }
 
 export const deleteUser = async (userid: number) => {
-    try {
-        const config = {
-            params: {userid}
-        }
-
-        await axios.delete("/api/user/deleted", config )
-  
-        return true
-    } catch (err) {
-      return { err }
+  try {
+    const config = {
+      params: { userid },
     }
-}
 
+    await axios.delete("/api/user/deleted", config)
+
+    return true
+  } catch (err) {
+    return { err }
+  }
+}

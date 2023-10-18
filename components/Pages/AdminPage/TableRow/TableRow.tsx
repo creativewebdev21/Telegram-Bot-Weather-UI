@@ -1,9 +1,9 @@
 import React from "react"
 import Button from "shared/Button"
 import { useAdminProvider } from "providers/AdminProvider"
+import swal from "sweetalert"
 import { TelegramUser } from "../types"
-import {blockUser, unblockUser, deleteUser} from "../../../../lib/telegramUser"
-import swal from 'sweetalert'
+import { blockUser, unblockUser, deleteUser } from "../../../../lib/telegramUser"
 
 const TableRow = ({ user }: { user: TelegramUser }) => {
   const { fetchTelegramUsers } = useAdminProvider()
@@ -16,18 +16,18 @@ const TableRow = ({ user }: { user: TelegramUser }) => {
   }
 
   const deleteUserData = async () => {
-    if (!await swal({
-      title: "Are you sure?",
-      text: "Are you sure that you want to delete this user?",
-      icon: "warning",
-      buttons: [
-          'No, I am not sure!',
-          'Yes, I am sure!'
-      ],
-    })) return;
-    
-      await deleteUser(user.userid)
-      fetchTelegramUsers()
+    if (
+      !(await swal({
+        title: "Are you sure?",
+        text: "Are you sure that you want to delete this user?",
+        icon: "warning",
+        buttons: ["No, I am not sure!", "Yes, I am sure!"],
+      }))
+    )
+      return
+
+    await deleteUser(user.userid)
+    fetchTelegramUsers()
   }
 
   return (
@@ -59,11 +59,13 @@ const TableRow = ({ user }: { user: TelegramUser }) => {
           id={`${user.userid}_block_btn`}
           className={`border-[1px] 
           w-[100px] h-[40px]
-          rounded-full ${user.blocked ? 'border-[green] !text-[green]' : 'border-[red] !text-[red]'}`}
-          pulseColor={user.blocked ? 'green' : 'red'}
+          rounded-full ${
+            user.blocked ? "border-[green] !text-[green]" : "border-[red] !text-[red]"
+          }`}
+          pulseColor={user.blocked ? "green" : "red"}
           onClick={updateBlockData}
         >
-          {user.blocked ? 'Unblock' : 'Block'}
+          {user.blocked ? "Unblock" : "Block"}
         </Button>
         <Button
           id={`${user.userid}_block_btn`}
