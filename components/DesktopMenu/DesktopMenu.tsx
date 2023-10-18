@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
+import { useAdminProvider } from "providers/AdminProvider"
 import Media from "../../shared/Media"
 import Switch from "../../shared/Switch"
 import { useTheme } from "../../providers/ThemeProvider"
@@ -10,6 +11,8 @@ const GoogleLoginButton = dynamic(() => import("../GoogleLoginButton"), {
 })
 
 const DesktopMenu = () => {
+  const { bot } = useAdminProvider()
+
   const { onChangeThemeConfig, themeMode } = useTheme()
 
   const onToggle = () => {
@@ -56,7 +59,7 @@ const DesktopMenu = () => {
           className="md:text-[12px] lg:text-[16px] xl:text-[20px]
           text-white font-poppins_bold"
         >
-          @WeatherHenryBot
+          @{bot?.handle || "WeatherHenryBot"}
         </p>
       </button>
       <div className="flex gap-x-[30px] items-center">

@@ -21,15 +21,14 @@ class BotController {
   }
 
   @Post("/api/bot/relanuch")
-  public async relaunch(@Body() body: { newkey: string; oldKey: string; newHandle: string }) {
-    const { newkey, oldKey, newHandle } = body
-
+  public async relaunch(@Body() body: { newKey: string; oldKey: string; newHandle: string }) {
+    const { newKey, oldKey, newHandle } = body
     try {
       stop(oldKey)
 
-      await BotModel.findOneAndUpdate({ key: oldKey }, { key: newkey, handle: newHandle }).lean()
+      await BotModel.findOneAndUpdate({ key: oldKey }, { key: newKey, handle: newHandle }).lean()
 
-      launch(newkey)
+      launch(newKey)
     } catch (err: any) {
       console.log(err)
       throw new Error(err)
