@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.3.2",
     "@nestjs/common": "^8.4.4",
     "@nestjs/core": "^8.4.4",
     "@nestjs/platform-express": "^8.4.4",
@@ -33,6 +34,7 @@
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
     "react-table": "^7.8.0",
     "reflect-metadata": "^0.1.13",
@@ -55,6 +57,7 @@
     "eslint-config-next": "^13.5.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "joi": "^17.11.0",
     "nodemon": "^2.0.15",
     "postcss": "^8.4.31",
     "prettier": "^2.6.2",
