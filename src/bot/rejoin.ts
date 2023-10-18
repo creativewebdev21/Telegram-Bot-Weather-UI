@@ -20,7 +20,7 @@ const rejoin = (bot: any) => {
     await newUser.save()
 
     ctx.reply(
-      "You have subscribed to weather updates! \nYou can access weather uodates using /weather command.",
+      "You have rejoined to weather bot! \nYou can access weather uodates using /weather command.",
     )
   })
 }
