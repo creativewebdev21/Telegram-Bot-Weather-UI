@@ -1,4 +1,4 @@
-import { Get, Controller, Post, Body } from "@nestjs/common"
+import { Get, Controller, Post, Body, Delete, Query } from "@nestjs/common"
 import User from "../model/UserModel"
 
 @Controller()
@@ -38,6 +38,17 @@ class UserController {
       await User.findOneAndUpdate({ userid }, { blocked: false }).lean()
 
       return { message: "unblocked" }
+    } catch (err: any) {
+      throw new Error(err)
+    }
+  }
+
+  @Delete("/api/user/deleted")
+  public async deleteUser(@Query("userid") userid: number) {
+    try {
+      await User.findOneAndRemove({ userid }).lean()
+
+      return { message: "deleted" }
     } catch (err: any) {
       throw new Error(err)
     }

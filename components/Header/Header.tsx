@@ -1,9 +1,13 @@
 import Link from "next/link"
 import React from "react"
-import GoogleLoginButton from "components/GoogleLoginButton"
+import dynamic from "next/dynamic"
 import Media from "../../shared/Media"
 import Switch from "../../shared/Switch"
 import { useTheme } from "../../providers/ThemeProvider"
+
+const GoogleLoginButton = dynamic(() => import("../GoogleLoginButton"), {
+  ssr: false,
+})
 
 const Header = () => {
   const { onChangeThemeConfig, themeMode } = useTheme()

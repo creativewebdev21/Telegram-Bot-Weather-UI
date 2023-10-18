@@ -16,7 +16,9 @@ const weather = (bot: any) => {
     }
 
     if (user?.blocked) {
-      ctx.reply("You have been blocked from using this bot!\nContact the bot owner to unblock you.")
+      ctx.reply(
+        "You have been blocked from using this bot!\nContact the bot owner to unblock you.\n\nTelegram ID: @fullstacktech",
+      )
       return
     }
 

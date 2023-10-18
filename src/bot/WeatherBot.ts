@@ -4,6 +4,7 @@ import help from "./help"
 import weather from "./weather"
 import subscribe from "./subscribe"
 import unsubscribe from "./unsubscribe"
+import rejoin from "./rejoin"
 
 const BOT_TOKEN = process.env.BOT_TOKEN || ""
 
@@ -18,5 +19,7 @@ subscribe(WeatherBot)
 unsubscribe(WeatherBot)
 
 weather(WeatherBot)
+
+rejoin(WeatherBot)
 
 export default WeatherBot
