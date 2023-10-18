@@ -1,9 +1,11 @@
 import React, { useContext, createContext, useCallback, useMemo, useEffect, useState } from "react"
 import getTelegramUsers from "../lib/getTelegramUsers"
+import { getBotKey } from "../lib/weatherBot"
 
 const AdminContext = createContext<any>(null)
 
 export const AdminProvider = ({ children }: any) => {
+  const [bot, setBot] = useState<any>(null)
   const [telegramUsers, setTelegramUsers] = useState<any>(null)
   const [filterKey, setFilterKey] = useState("")
   const [filterUsers, setFilterUsers] = useState<any>(null)
@@ -29,6 +31,24 @@ export const AdminProvider = ({ children }: any) => {
     if (canPreviousPage) setPageIndex(pageIndex - 1)
   }
 
+  const fetchBotData = useCallback(async () => {
+    const response: any = await getBotKey()
+
+    if (!response.err) setBot(response)
+  }, [])
+
+  const fetchTelegramUsers = useCallback(async () => {
+    try {
+      const response = await getTelegramUsers()
+      setTelegramUsers(response)
+      setFilterUsers(response)
+    } catch (err) {}
+  }, [])
+
+  useEffect(() => {
+    fetchBotData()
+  }, [fetchBotData])
+
   useEffect(() => {
     if (filterUsers) {
       if (!canNextPage) {
@@ -50,14 +70,6 @@ export const AdminProvider = ({ children }: any) => {
   useEffect(() => {
     setPageIndex(0)
   }, [pageSize])
-
-  const fetchTelegramUsers = useCallback(async () => {
-    try {
-      const response = await getTelegramUsers()
-      setTelegramUsers(response)
-      setFilterUsers(response)
-    } catch (err) {}
-  }, [])
 
   useEffect(() => {
     if (telegramUsers) {
@@ -88,6 +100,8 @@ export const AdminProvider = ({ children }: any) => {
       paginatedUser,
       nextPage,
       previousPage,
+      bot,
+      fetchBotData,
     }),
     [
       canPreviousPage,
@@ -104,6 +118,8 @@ export const AdminProvider = ({ children }: any) => {
       paginatedUser,
       nextPage,
       previousPage,
+      bot,
+      fetchBotData,
     ],
   )
 
