@@ -37,7 +37,7 @@ const BotForm = () => {
                             text-[10px] md:text-[16px]
                             md:w-[300px] md:h-[45px]
                             w-[180px] h-[30px]"
-          placeholder={`https://t.me/${bot?.handle || ""}`}
+          placeholder={`${bot?.handle || ""}`}
           id="newHandle"
           name="newHandle"
           hookToForm

@@ -9,8 +9,6 @@ import rejoin from "./rejoin"
 let WeatherBot: any
 
 const launch = (botKey: string) => {
-  console.log(botKey)
-  
   WeatherBot = new Telegraf(botKey)
 
   start(WeatherBot)
