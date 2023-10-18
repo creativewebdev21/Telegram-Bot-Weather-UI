@@ -1,24 +1,21 @@
-import Subscriber from "../model/Subscriber"
+import User from "../model/UserModel"
 
 const subscribe = (bot: any) => {
   bot.command("subscribe", async (ctx: any) => {
-    // Handle subscription logic here
-    const userId = ctx.from.id
-    const username = ctx.from.username
+    const userid = ctx.from.id
 
-    let subscriber = await Subscriber.findOne({ userid: userId })
+    let user = await User.findOne({ userid }).lean()
 
-    if (subscriber) {
+    if (!user) {
+      ctx.reply("You have not registered!!!")
+    }
+
+    if (user?.subscribed) {
       ctx.reply("You have already subscribed to weather updates!")
       return
     }
 
-    subscriber = new Subscriber({
-      username: username,
-      userid: userId,
-    })
-
-    await subscriber.save()
+    await User.findOneAndUpdate({ userid }, { subscribed: true }).lean()
 
     ctx.reply(
       "You have subscribed to weather updates! \nYou can access weather uodates using /weather command.",
