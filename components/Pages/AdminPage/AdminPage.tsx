@@ -19,11 +19,11 @@ const AdminPage = () => {
                   flex items-center justify-center
                   flex-col"
       >
-        <div className="w-[80%] flex justify-end pb-[10px]">
+        <div className="w-[90%] xl:w-[80%] flex justify-end pb-[10px]">
           <SearchInput />
         </div>
         <table
-          className="w-[80%] font-poppins bg-white
+          className="w-[90%] xl:w-[80%] font-poppins bg-white
         border-black border-[2px]"
         >
           <thead className="border-b-[2px] border-black border-solid">
