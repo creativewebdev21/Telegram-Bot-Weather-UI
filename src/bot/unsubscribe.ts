@@ -1,20 +1,19 @@
-import Subscriber from "../model/Subscriber"
+import User from "../model/UserModel"
 
 const unsubscribe = (bot: any) => {
   bot.command("unsubscribe", async (ctx: any) => {
     const userid = ctx.from.id
 
-    // Search for the user's ID in the database
-    const subscriber = await Subscriber.findOne({ userid })
+    const user = await User.findOneAndUpdate({ userid }, { subscribed: false })
 
-    if (!subscriber) {
+    if (!user) {
       ctx.reply(
         "You have not subscribed to get Weather Updates!\nUse /subscribe to subscribe to the bot.",
       )
       return
     }
 
-    await Subscriber.findOneAndDelete({ userid })
+    ctx.reply("You have unsubscribed!!!")
   })
 }
 

@@ -1,6 +1,5 @@
-import Subscriber from "../model/Subscriber"
-import BlockedUser from "../model/BlockedUserModel"
 import axios from "axios"
+import User from "../model/UserModel"
 
 const WeatherAPIKey = process.env.WEATHER_API_KEY
 let isListening = false
@@ -9,16 +8,19 @@ const weather = (bot: any) => {
   bot.command("weather", async (ctx: any) => {
     isListening = true
 
-    const blockedUser = await BlockedUser.findOne({ userid: ctx.from.id })
+    const user = await User.findOne({ userid: ctx.from.id })
 
-    if (blockedUser) {
+    if (!user) {
+      ctx.reply("You are not registered!!!!")
+      return
+    }
+
+    if (user?.blocked) {
       ctx.reply("You have been blocked from using this bot!\nContact the bot owner to unblock you.")
       return
     }
 
-    const subscriber = await Subscriber.findOne({ userid: ctx.from.id })
-
-    if (!subscriber) {
+    if (!user?.subscribed) {
       ctx.reply(
         "You have not subscribed to get Weather Updates!\nUse /subscribe to subscribe to the bot.",
       )
@@ -36,16 +38,13 @@ const weather = (bot: any) => {
       const messageText = ctx.message.text
       const city = messageText
 
-      // Fetch URL for weather data request from OpenWeatherMap API
       const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?APPID=${WeatherAPIKey}&q=${city}`
 
       try {
         const response = await axios.get(apiUrl)
 
-        // Extract the weather data from the API response
         const weatherData = response.data
 
-        // Extract the relevant weather information from the API response
         const cityName = weatherData.city.name
         const country = weatherData.city.country
         const date_txt = weatherData.list[0].dt_txt
