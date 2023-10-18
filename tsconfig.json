@@ -28,6 +28,7 @@
     ],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -35,7 +36,7 @@
   },
   "include": [
     "./pages/**/*",
-    "./src/**/*",
+    "./server/**/*",
     "./ui/**/*",
     "globals.d.ts"
   ],
