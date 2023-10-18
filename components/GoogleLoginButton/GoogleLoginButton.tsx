@@ -27,8 +27,13 @@ const GoogleLoginButton = () => {
   return (
     <Button
       id="google_login_btn"
-      className="h-[50px] w-[120px] font-poppins_semibold
-                bg-[#54B3C3] text-[white] text-[18px]
+      className="xl:h-[50px] xl:w-[120px]
+                lg:w-[96px] lg:h-[40px]
+                md:w-[72px] md:h-[30px]
+                w-[100px] h-[35px]
+                font-poppins_semibold
+                bg-[#54B3C3] text-[white]
+                text-[13px] md:text-[10.8px] lg:text-[14.4px] xl:text-[18px]
                 border-[1px] border-white"
       onClick={!credentialToken ? login : logout}
     >
