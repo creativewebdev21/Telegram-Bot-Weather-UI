@@ -21,16 +21,17 @@ class BotController {
   }
 
   @Post("/api/bot/relanuch")
-  public async relaunch(@Body() body: { newkey: string; oldKey: string }) {
-    const { newkey, oldKey } = body
+  public async relaunch(@Body() body: { newkey: string; oldKey: string; newHandle: string }) {
+    const { newkey, oldKey, newHandle } = body
 
     try {
       stop(oldKey)
 
-      await BotModel.findOneAndUpdate({ key: oldKey }, { key: newkey }).lean()
+      await BotModel.findOneAndUpdate({ key: oldKey }, { key: newkey, handle: newHandle }).lean()
 
       launch(newkey)
     } catch (err: any) {
+      console.log(err)
       throw new Error(err)
     }
   }
@@ -38,11 +39,11 @@ class BotController {
   @Get("/api/bot/getKey")
   public async getKey() {
     try {
-      const bots = await BotModel.find({})
+      const bots = await BotModel.find({}).lean()
 
       if (bots.length) return bots[0]
 
-      return null
+      return { key: "" }
     } catch (err: any) {
       throw new Error(err)
     }
