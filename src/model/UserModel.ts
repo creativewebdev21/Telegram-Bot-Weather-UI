@@ -4,12 +4,13 @@ interface UserModel extends Document {
   username: string
   userid: number
   time: Date
+  blocked: Boolean
+  subscribed: Boolean
 }
 
 const UserSchema = new Schema<UserModel>({
   username: {
     type: String,
-    // required: true,
   },
   userid: {
     type: Number,
@@ -18,6 +19,14 @@ const UserSchema = new Schema<UserModel>({
   time: {
     type: Date,
     default: Date.now,
+  },
+  blocked: {
+    type: Boolean,
+    default: false,
+  },
+  subscribed: {
+    type: Boolean,
+    default: false,
   },
 })
 

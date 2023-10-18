@@ -23,8 +23,8 @@ export const UserProvider: React.FC<Props> = ({ children }) => {
   }, [credentialToken])
 
   const value = useMemo(
-    () => ({ credentialToken, setCredentialToken, userData }),
-    [credentialToken, setCredentialToken, userData],
+    () => ({ credentialToken, setCredentialToken, userData, setUserData }),
+    [credentialToken, setCredentialToken, userData, setUserData],
   )
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>

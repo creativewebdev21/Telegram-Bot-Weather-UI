@@ -1,9 +1,10 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './ApplicationModule';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import { NestFactory } from "@nestjs/core"
+import { AppModule } from "./ApplicationModule"
+import { NestExpressApplication } from "@nestjs/platform-express"
 import mongoose from "mongoose"
 import { MONGO_URI } from "../utils/constants/env"
-import { join } from 'path';
+import { join } from "path"
+import WeatherBot from "./bot/WeatherBot"
 
 async function bootstrap() {
   const opts = {
@@ -21,11 +22,16 @@ async function bootstrap() {
       console.log("Error connecting to Database : ", error.message)
     })
 
-  const server = await NestFactory.create<NestExpressApplication>(AppModule);
+  WeatherBot.launch()
+  WeatherBot.catch((error) => {
+    console.log("Bot Error:", error)
+  })
 
-  server.useStaticAssets(join(__dirname, '..', 'public'))
+  const server = await NestFactory.create<NestExpressApplication>(AppModule)
 
-  await server.listen(3000);
+  server.useStaticAssets(join(__dirname, "..", "public"))
+
+  await server.listen(3000)
 }
 
-bootstrap();
+bootstrap()
