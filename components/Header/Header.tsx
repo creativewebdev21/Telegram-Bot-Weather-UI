@@ -60,9 +60,9 @@ const Header = () => {
         <div className="flex gap-x-[30px] items-center">
           <GoogleLoginButton />
           <div className="flex justify-center gap-x-[20px]">
-            <p className="font-poppins_medium text-[18px] text-[white] capitalize">Dark</p>
-            <Switch id="theme-selector" onClick={onToggle} value={themeMode === "dark"} />
             <p className="font-poppins_medium text-[18px] text-[white] capitalize">Light</p>
+            <Switch id="theme-selector" onClick={onToggle} value={themeMode === "dark"} />
+            <p className="font-poppins_medium text-[18px] text-[white] capitalize">Dark</p>
           </div>
         </div>
       </div>
