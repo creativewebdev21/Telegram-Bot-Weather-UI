@@ -5,6 +5,7 @@ import { NODE_ENV } from "../utils/constants/env"
 import AppController from "./AppController"
 import AdminController from "./controller/AdminController"
 import UserController from "./controller/UserController"
+import BotController from "./controller/BotController"
 
 @Module({
   imports: [
@@ -15,6 +16,6 @@ import UserController from "./controller/UserController"
       }),
     ),
   ],
-  controllers: [AppController, AdminController, UserController],
+  controllers: [AppController, AdminController, UserController, BotController],
 })
 export class AppModule {}
