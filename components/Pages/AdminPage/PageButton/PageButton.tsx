@@ -13,9 +13,11 @@ interface ButtonProps {
 const PageButton: FC<ButtonProps> = ({ children, className, ...rest }) => (
   <button
     type="button"
-    className={`relative inline-flex items-center px-2 py-2 
+    className={`relative inline-flex items-center 
+      md:p-2
+      p-[3px] text-sm
       border border-gray-300 
-      bg-white text-sm font-medium text-gray-500 hover:bg-gray-50
+      bg-white font-medium text-gray-500 hover:bg-gray-50
        ${className}`}
     {...rest}
   >
