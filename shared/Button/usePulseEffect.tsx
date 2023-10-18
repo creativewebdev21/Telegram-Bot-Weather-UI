@@ -34,7 +34,7 @@ const usePulseEffect = ({ ref, pulseRef, pulseColor }: Props) => {
       ref.current.removeEventListener("click", handleMouseClick)
       ref.current.addEventListener("click", handleMouseClick)
     }
-  }, [ref, pulseRef])
+  }, [ref, pulseRef, pulseColor])
 }
 
 export default usePulseEffect
