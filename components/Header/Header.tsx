@@ -55,7 +55,7 @@ const Header = () => {
           </Link>
         </div>
         <button type="button" onClick={() => window.open("https://t.me/WeatherHenryBot", "_blank")}>
-          <p className="text-[18px] text-white">Bot Handle</p>
+          <p className="text-[20px] text-white font-poppins_bold">@WeatherHenryBot</p>
         </button>
         <div className="flex gap-x-[30px] items-center">
           <GoogleLoginButton />
