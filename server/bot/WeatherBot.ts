@@ -6,20 +6,35 @@ import subscribe from "./subscribe"
 import unsubscribe from "./unsubscribe"
 import rejoin from "./rejoin"
 
-const BOT_TOKEN = process.env.BOT_TOKEN || ""
+const launch = (botKey: string) => {
+  const WeatherBot = new Telegraf(botKey)
 
-const WeatherBot = new Telegraf(BOT_TOKEN)
+  start(WeatherBot)
 
-start(WeatherBot)
+  help(WeatherBot)
 
-help(WeatherBot)
+  subscribe(WeatherBot)
 
-subscribe(WeatherBot)
+  unsubscribe(WeatherBot)
 
-unsubscribe(WeatherBot)
+  weather(WeatherBot)
 
-weather(WeatherBot)
+  rejoin(WeatherBot)
 
-rejoin(WeatherBot)
+  WeatherBot.launch().then(() => {
+    console.log(`Bot-${botKey} is running`)
+  })
+  WeatherBot.catch((error) => {
+    console.log("Bot Error:", error)
+  })
+}
 
-export default WeatherBot
+export const stop = (botKey: string) => {
+  const WeatherBot = new Telegraf(botKey)
+
+  WeatherBot.stop("Stopped by admin")
+
+  console.log(`Bot-${botKey} is stopped`)
+}
+
+export default launch
