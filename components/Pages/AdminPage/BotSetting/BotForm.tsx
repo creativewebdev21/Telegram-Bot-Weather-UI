@@ -27,7 +27,12 @@ const BotForm = () => {
       className="w-full flex flex-col gap-y-[10px]"
     >
       <div className="flex items-center gap-x-[10px]">
-        <p className="font-poppins text-[16px]">Handle:</p>
+        <p
+          className="font-poppins 
+        xl:text-[16px] lg:text-[12.8px] md:text-[9.6px] text-[9px]"
+        >
+          Handle:
+        </p>
         <Input
           value={newHandle}
           onChange={(e) => setNewHandle(e.target.value)}
@@ -44,7 +49,12 @@ const BotForm = () => {
         />
       </div>
       <div className="flex items-center gap-x-[10px]">
-        <p className="font-poppins text-[16px]">BotKey:</p>
+        <p
+          className="font-poppins
+        xl:text-[16px] lg:text-[12.8px] md:text-[9.6px] text-[9px]"
+        >
+          BotKey:
+        </p>
         <Input
           value={newBotKey}
           onChange={(e) => setNewBotKey(e.target.value)}
@@ -62,10 +72,10 @@ const BotForm = () => {
         <Button
           id="relaunc_bot"
           className="md:h-[50px] md:w-[150px]
-                        h-[40px] w-[150px]
+                        h-[30px] w-[150px]
                         font-poppins_semibold
                         bg-[#54B3C3] text-[white]
-                        text-[14px] md:text-[18px]
+                        text-[12px] md:text-[18px]
                         !border-[1px] !border-white"
           type="submit"
         >
