@@ -42,7 +42,7 @@ const BotForm = () => {
                             text-[10px] md:text-[16px]
                             md:w-[300px] md:h-[45px]
                             w-[180px] h-[30px]"
-          placeholder={`${bot?.handle || ""}`}
+          placeholder={`${bot?.handle || "Ex. WeatherHenryBot"}`}
           id="newHandle"
           name="newHandle"
           hookToForm
@@ -64,7 +64,7 @@ const BotForm = () => {
                             text-[10px] md:text-[16px]
                             md:w-[500px] md:h-[45px]
                             w-[180px] h-[30px]"
-          placeholder={`${bot?.key || ""}`}
+          placeholder={`${bot?.key || "Ex. 6576938381:AAG...VVK_NM"}`}
           id="newKey"
           name="newKey"
           hookToForm
@@ -79,7 +79,7 @@ const BotForm = () => {
                         !border-[1px] !border-white"
           type="submit"
         >
-          Restart
+          {!bot?.key ? "Launch" : "Restart"}
         </Button>
       </div>
     </Form>
