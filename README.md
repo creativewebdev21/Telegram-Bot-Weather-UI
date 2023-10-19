@@ -1,7 +1,6 @@
 # Weather Bot UI AST
 
 <img width="1440" alt="Screenshot 2023-10-18 at 6 34 08 AM" src="https://github.com/henryziadtech/Weather-Bot-UI/assets/109102047/bf1003e2-a0ce-4cf7-87f9-6b7699a52167">
-![image]()
 
 ## Getting Started
 
