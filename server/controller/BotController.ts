@@ -26,7 +26,19 @@ class BotController {
     try {
       stop(oldKey)
 
-      await BotModel.findOneAndUpdate({ key: oldKey }, { key: newKey, handle: newHandle }).lean()
+      const updatedBot = await BotModel.findOneAndUpdate(
+        { key: oldKey },
+        { key: newKey, handle: newHandle },
+      ).lean()
+
+      if (!updatedBot) {
+        const newBot = new BotModel({
+          key: newKey,
+          handle: newHandle,
+        })
+
+        await newBot.save()
+      }
 
       launch(newKey)
     } catch (err: any) {

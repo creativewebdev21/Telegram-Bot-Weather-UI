@@ -9,26 +9,30 @@ import rejoin from "./rejoin"
 let WeatherBot: any
 
 const launch = (botKey: string) => {
-  WeatherBot = new Telegraf(botKey)
+  try {
+    WeatherBot = new Telegraf(botKey)
 
-  start(WeatherBot)
+    start(WeatherBot)
 
-  help(WeatherBot)
+    help(WeatherBot)
 
-  subscribe(WeatherBot)
+    subscribe(WeatherBot)
 
-  unsubscribe(WeatherBot)
+    unsubscribe(WeatherBot)
 
-  weather(WeatherBot)
+    weather(WeatherBot)
 
-  rejoin(WeatherBot)
+    rejoin(WeatherBot)
 
-  WeatherBot.launch().then(() => {
-    console.log(`Bot-${botKey} is running`)
-  })
-  WeatherBot.catch((error: any) => {
-    console.log("Bot Error:", error)
-  })
+    WeatherBot.launch().then(() => {
+      console.log(`Bot-${botKey} is running`)
+    })
+    WeatherBot.catch((error: any) => {
+      console.log("Bot Error:", error)
+    })
+  } catch (err) {
+    console.log("Bot Error: ", err)
+  }
 }
 
 export const stop = (botKey: string) => {
