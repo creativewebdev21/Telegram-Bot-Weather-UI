@@ -39,4 +39,4 @@ yarn format
 ```
 
 ## Next.js + Nest.js with Typescript
-🛳️ Built by Henry Ziad 🛳️
+🛳️ Built by Ronald Pelham 🛳️
